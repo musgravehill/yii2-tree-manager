@@ -425,12 +425,13 @@ HTML;
             'data-action' => 'save',
             'class' => 'btn btn-success btn-sm',
         ]);
-        echo Html::a(Yii::t('vendor/musgravehill/yii2-tree-manager/widgets/nestable', 'Advanced editing'),
+        /*
+        echo Html::a(Yii::t('vendor/musgravehill/yii2-tree-manager/widgets/nestable', 'Update'),
             $item['update-url'], [
                 'data-action' => 'advanced-editing',
                 'class' => 'btn btn-default btn-sm',
                 'target' => '_blank'
-            ]);
+            ]); */
         echo Html::button(Yii::t('vendor/musgravehill/yii2-tree-manager/widgets/nestable', 'Delete'), [
             'data-action' => 'delete',
             'class' => 'btn btn-danger btn-sm'
