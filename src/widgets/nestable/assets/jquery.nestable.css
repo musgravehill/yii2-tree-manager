@@ -149,9 +149,9 @@
 
 .dd-edit-panel {
     display: none;
-    height: 63px;
+    height: 42px;
     background-color: #cccccc;
-    padding: 2px;
+    padding: 6px;
 }
 
 .dd-input-name,
