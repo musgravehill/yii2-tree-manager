@@ -18,8 +18,8 @@ use yii\widgets\Pjax;
  * Class Nestable
  * @package musgravehill\tree\manager\widgets
  */
-class Nestable extends Widget
-{
+class Nestable extends Widget {
+
     /**
      * @var string
      */
@@ -91,8 +91,7 @@ class Nestable extends Widget
     /**
      * Инициализация плагина
      */
-    public function init()
-    {
+    public function init() {
         parent::init();
 
         if (empty($this->id)) {
@@ -135,8 +134,7 @@ class Nestable extends Widget
      * @param ActiveRecord|TreeInterface $node
      * @return array
      */
-    protected function getNode($node)
-    {
+    protected function getNode($node) {
         $items = [];
         /** @var ActiveRecord[]|TreeInterface[] $children */
         $children = $node->children;
@@ -155,8 +153,7 @@ class Nestable extends Widget
      * @param ActiveRecord|TreeInterface[] $node
      * @return array
      */
-    private function prepareItems($node)
-    {
+    private function prepareItems($node) {
         return $this->getNode($node);
     }
 
@@ -164,8 +161,7 @@ class Nestable extends Widget
      * @param null $name
      * @return array
      */
-    private function getPluginOptions($name = null)
-    {
+    private function getPluginOptions($name = null) {
         $options = ArrayHelper::merge($this->getDefaultPluginOptions(), $this->pluginOptions);
 
         if (isset($options[$name])) {
@@ -178,8 +174,7 @@ class Nestable extends Widget
     /**
      * Работаем!
      */
-    public function run()
-    {
+    public function run() {
         $this->registerActionButtonsAssets();
         $this->actionButtons();
 
@@ -197,8 +192,7 @@ class Nestable extends Widget
     /**
      * Register Asset manager
      */
-    private function registerPluginAssets()
-    {
+    private function registerPluginAssets() {
         NestableAsset::register($this->getView());
 
         $view = $this->getView();
@@ -228,8 +222,7 @@ class Nestable extends Widget
     /**
      * Register Asset manager
      */
-    private function registerActionButtonsAssets()
-    {
+    private function registerActionButtonsAssets() {
         $view = $this->getView();
         $view->registerJs("
 			$('.{$this->id}-nestable-menu [data-action]').on('click', function(e) {
@@ -260,14 +253,11 @@ class Nestable extends Widget
      * Generate default plugin options
      * @return array
      */
-    private function getDefaultPluginOptions()
-    {
+    private function getDefaultPluginOptions() {
         $options = [
             'namePlaceholder' => $this->getPlaceholderForName(),
-            'deleteAlert' => Yii::t('vendor/musgravehill/yii2-tree-manager/widgets/nestable',
-                'The nobe will be removed together with the children. Are you sure?'),
-            'newNodeTitle' => Yii::t('vendor/musgravehill/yii2-tree-manager/widgets/nestable',
-                'Enter the new node name'),
+            'deleteAlert' => Yii::t('vendor/musgravehill/yii2-tree-manager/widgets/nestable', 'The nobe will be removed together with the children. Are you sure?'),
+            'newNodeTitle' => Yii::t('vendor/musgravehill/yii2-tree-manager/widgets/nestable', 'Enter the new node name'),
         ];
 
         $controller = Yii::$app->controller;
@@ -297,16 +287,14 @@ class Nestable extends Widget
     /**
      * Get placeholder for Name input
      */
-    public function getPlaceholderForName()
-    {
+    public function getPlaceholderForName() {
         return Yii::t('vendor/musgravehill/yii2-tree-manager/widgets/nestable', 'Node name');
     }
 
     /**
      * Кнопки действий над виджетом
      */
-    public function actionButtons()
-    {
+    public function actionButtons() {
         echo Html::beginTag('div', ['class' => "{$this->id}-nestable-menu"]);
 
         echo Html::beginTag('div', ['class' => 'btn-group']);
@@ -332,8 +320,7 @@ class Nestable extends Widget
     /**
      * Вывод меню
      */
-    private function renderMenu()
-    {
+    private function renderMenu() {
         echo Html::beginTag('div', ['class' => 'dd-nestable', 'id' => $this->id]);
 
         $this->printLevel($this->_items);
@@ -344,13 +331,12 @@ class Nestable extends Widget
     /**
      * Render form for new node
      */
-    private function renderForm()
-    {
+    private function renderForm() {
         /** @var ActiveRecord $model */
         $model = new $this->modelClass;
-        $labelNewNode = Yii::t('vendor/musgravehill/yii2-tree-manager/widgets/nestable','New node');
-        $labelCloseButton = Yii::t('vendor/musgravehill/yii2-tree-manager/widgets/nestable','Close');
-        $labelCreateNode = Yii::t('vendor/musgravehill/yii2-tree-manager/widgets/nestable','Create node');
+        $labelNewNode = Yii::t('vendor/musgravehill/yii2-tree-manager/widgets/nestable', 'New node');
+        $labelCloseButton = Yii::t('vendor/musgravehill/yii2-tree-manager/widgets/nestable', 'Close');
+        $labelCreateNode = Yii::t('vendor/musgravehill/yii2-tree-manager/widgets/nestable', 'Create node');
 
         echo <<<HTML
 <div class="modal" id="{$this->id}-new-node-modal" tabindex="-1" role="dialog" aria-labelledby="newNodeModalLabel">
@@ -359,7 +345,7 @@ class Nestable extends Widget
 HTML;
         /** @var ActiveForm $form */
         $form = ActiveForm::begin([
-            'id' => $this->id . '-new-node-form'
+                    'id' => $this->id . '-new-node-form'
         ]);
 
         echo <<<HTML
@@ -391,8 +377,7 @@ HTML;
      * Распечатка одного уровня
      * @param $level
      */
-    private function printLevel($level)
-    {
+    private function printLevel($level) {
         echo Html::beginTag('ol', ['class' => 'dd-list']);
 
         foreach ($level as $item) {
@@ -406,8 +391,7 @@ HTML;
      * Распечатка одного пункта
      * @param $item
      */
-    private function printItem($item)
-    {
+    private function printItem($item) {
         $htmlOptions = ['class' => 'dd-item'];
         $htmlOptions['data-id'] = !empty($item['id']) ? $item['id'] : '';
 
@@ -417,26 +401,31 @@ HTML;
         echo Html::tag('div', $item['name'], ['class' => 'dd-content']);
 
         echo Html::beginTag('div', ['class' => 'dd-edit-panel']);
-        echo Html::input('text', null, $item['name'],
-            ['class' => 'dd-input-name', 'placeholder' => $this->getPlaceholderForName()]);
+        echo Html::input('text', null, $item['name'], ['class' => 'dd-input-name', 'placeholder' => $this->getPlaceholderForName()]);
 
-        echo Html::beginTag('div', ['class' => 'btn-group']);
+        //echo Html::beginTag('div', ['class' => 'btn-group']);
         echo Html::button(Yii::t('vendor/musgravehill/yii2-tree-manager/widgets/nestable', 'Save'), [
             'data-action' => 'save',
             'class' => 'btn btn-success btn-sm',
         ]);
+
+        echo Html::input('text', null, '', ['create-child-name' => '', 'parent-id' => $item['id'], 'class' => 'dd-input-create-child', 'placeholder' => 'create child']);
+        echo Html::button('create child', [
+            'create-child-submit' => '', 'parent-id' => $item['id'],
+            'class' => 'btn btn-primary btn-sm'
+        ]); 
         /*
-        echo Html::a(Yii::t('vendor/musgravehill/yii2-tree-manager/widgets/nestable', 'Update'),
-            $item['update-url'], [
-                'data-action' => 'advanced-editing',
-                'class' => 'btn btn-default btn-sm',
-                'target' => '_blank'
-            ]); */
+          echo Html::a(Yii::t('vendor/musgravehill/yii2-tree-manager/widgets/nestable', 'Update'),
+          $item['update-url'], [
+          'data-action' => 'advanced-editing',
+          'class' => 'btn btn-default btn-sm',
+          'target' => '_blank'
+          ]); */
         echo Html::button(Yii::t('vendor/musgravehill/yii2-tree-manager/widgets/nestable', 'Delete'), [
             'data-action' => 'delete',
-            'class' => 'btn btn-danger btn-sm'
+            'class' => 'btn btn-danger btn-sm pull-right'
         ]);
-        echo Html::endTag('div');
+        //echo Html::endTag('div');
 
         echo Html::endTag('div');
 
@@ -446,4 +435,5 @@ HTML;
 
         echo Html::endTag('li');
     }
+
 }
