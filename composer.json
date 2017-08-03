@@ -1,5 +1,5 @@
 {
-  "name": "voskobovich/yii2-tree-manager",
+  "name": "musgravehill/yii2-tree-manager",
   "description": "Tree Manager using jquery.nestable plugin for Yii 2",
   "keywords": [
     "widget",
@@ -8,18 +8,16 @@
     "nestable",
     "editor"
   ],
-  "homepage": "https://github.com/voskobovich/yii2-tree-manager",
+  "homepage": "https://github.com/musgravehill/yii2-tree-manager",
   "type": "yii2-widget",
   "license": "MIT",
   "support": {
-    "issues": "https://github.com/voskobovich/yii2-tree-manager/issues",
-    "source": "https://github.com/voskobovich/yii2-tree-manager"
+    "issues": "https://github.com/musgravehill/yii2-tree-manager/issues",
+    "source": "https://github.com/musgravehill/yii2-tree-manager"
   },
   "authors": [
     {
-      "name": "Vitaly Voskobovich",
-      "email": "vitaly@voskobovich.com",
-      "homepage": "http://voskobovich.com"
+      "name": "musgravehill",      
     }
   ],
   "require": {
@@ -29,11 +27,11 @@
   },
   "autoload": {
     "psr-4": {
-      "voskobovich\\tree\\manager\\actions\\": "src/actions",
-      "voskobovich\\tree\\manager\\behaviors\\": "src/behaviors",
-      "voskobovich\\tree\\manager\\forms\\": "src/forms",
-      "voskobovich\\tree\\manager\\interfaces\\": "src/interfaces",
-      "voskobovich\\tree\\manager\\widgets\\nestable\\": "src/widgets/nestable"
+      "musgravehill\\tree\\manager\\actions\\": "src/actions",
+      "musgravehill\\tree\\manager\\behaviors\\": "src/behaviors",
+      "musgravehill\\tree\\manager\\forms\\": "src/forms",
+      "musgravehill\\tree\\manager\\interfaces\\": "src/interfaces",
+      "musgravehill\\tree\\manager\\widgets\\nestable\\": "src/widgets/nestable"
     }
   }
 }
