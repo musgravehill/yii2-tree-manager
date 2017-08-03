@@ -1,15 +1,15 @@
 <?php
 
-namespace voskobovich\tree\manager\actions;
+namespace musgravehill\tree\manager\actions;
 
-use voskobovich\tree\manager\interfaces\TreeInterface;
+use musgravehill\tree\manager\interfaces\TreeInterface;
 use Yii;
 use yii\db\ActiveRecord;
 use yii\web\NotFoundHttpException;
 
 /**
  * Class DeleteNodeAction
- * @package voskobovich\tree\manager\actions
+ * @package musgravehill\tree\manager\actions
  */
 class DeleteNodeAction extends BaseAction
 {

@@ -1,10 +1,10 @@
 <?php
 
-namespace voskobovich\tree\manager\interfaces;
+namespace musgravehill\tree\manager\interfaces;
 
 /**
  * Interface TreeInterface
- * @package voskobovich\tree\manager\interfaces
+ * @package musgravehill\tree\manager\interfaces
  */
 interface TreeInterface
 {

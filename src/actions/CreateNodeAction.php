@@ -1,15 +1,15 @@
 <?php
 
-namespace voskobovich\tree\manager\actions;
+namespace musgravehill\tree\manager\actions;
 
 use Yii;
-use voskobovich\tree\manager\interfaces\TreeInterface;
+use musgravehill\tree\manager\interfaces\TreeInterface;
 use yii\db\ActiveRecord;
 use yii\web\HttpException;
 
 /**
  * Class CreateNodeAction
- * @package voskobovich\tree\manager\actions
+ * @package musgravehill\tree\manager\actions
  */
 class CreateNodeAction extends BaseAction
 {

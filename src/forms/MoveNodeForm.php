@@ -1,13 +1,13 @@
 <?php
 
-namespace voskobovich\tree\manager\forms;
+namespace musgravehill\tree\manager\forms;
 
 use yii\base\Model;
 use Yii;
 
 /**
  * Class MoveNodeForm
- * @package voskobovich\tree\manager\\forms
+ * @package musgravehill\tree\manager\\forms
  */
 class MoveNodeForm extends Model
 {

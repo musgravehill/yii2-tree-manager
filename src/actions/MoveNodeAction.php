@@ -1,9 +1,9 @@
 <?php
 
-namespace voskobovich\tree\manager\actions;
+namespace musgravehill\tree\manager\actions;
 
-use voskobovich\tree\manager\forms\MoveNodeForm;
-use voskobovich\tree\manager\interfaces\TreeInterface;
+use musgravehill\tree\manager\forms\MoveNodeForm;
+use musgravehill\tree\manager\interfaces\TreeInterface;
 use Yii;
 use yii\base\Exception;
 use yii\db\ActiveRecord;

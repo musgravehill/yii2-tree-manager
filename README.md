@@ -22,13 +22,13 @@ The preferred way to install this extension is through [composer](http://getcomp
 Either run
 
 ```
-php composer.phar require --prefer-dist voskobovich/yii2-tree-manager "~1.0"
+php composer.phar require --prefer-dist musgravehill/yii2-tree-manager "~1.0"
 ```
 
 or add
 
 ```
-"voskobovich/yii2-tree-manager": "~1.0"
+"musgravehill/yii2-tree-manager": "~1.0"
 ```
 
 to the require section of your `composer.json` file.
@@ -48,19 +48,19 @@ public function actions()
 
     return [
         'moveNode' => [
-            'class' => 'voskobovich\tree\manager\actions\MoveNodeAction',
+            'class' => 'musgravehill\tree\manager\actions\MoveNodeAction',
             'modelClass' => $modelClass,
         ],
         'deleteNode' => [
-            'class' => 'voskobovich\tree\manager\actions\DeleteNodeAction',
+            'class' => 'musgravehill\tree\manager\actions\DeleteNodeAction',
             'modelClass' => $modelClass,
         ],
         'updateNode' => [
-            'class' => 'voskobovich\tree\manager\actions\UpdateNodeAction',
+            'class' => 'musgravehill\tree\manager\actions\UpdateNodeAction',
             'modelClass' => $modelClass,
         ],
         'createNode' => [
-            'class' => 'voskobovich\tree\manager\actions\CreateNodeAction',
+            'class' => 'musgravehill\tree\manager\actions\CreateNodeAction',
             'modelClass' => $modelClass,
         ],
     ];
@@ -70,7 +70,7 @@ public function actions()
 3. Выведите виджет в удобном месте
 
 ```
-use \voskobovich\tree\manager\widgets\nestable\Nestable;
+use \musgravehill\tree\manager\widgets\nestable\Nestable;
 
 <?= Nestable::widget([
     'modelClass' => 'models\ModelName',

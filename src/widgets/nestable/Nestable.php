@@ -1,8 +1,8 @@
 <?php
 
-namespace voskobovich\tree\manager\widgets\nestable;
+namespace musgravehill\tree\manager\widgets\nestable;
 
-use voskobovich\tree\manager\interfaces\TreeInterface;
+use musgravehill\tree\manager\interfaces\TreeInterface;
 use Yii;
 use yii\base\InvalidConfigException;
 use yii\base\Widget;
@@ -16,7 +16,7 @@ use yii\widgets\Pjax;
 
 /**
  * Class Nestable
- * @package voskobovich\tree\manager\widgets
+ * @package musgravehill\tree\manager\widgets
  */
 class Nestable extends Widget
 {
@@ -264,9 +264,9 @@ class Nestable extends Widget
     {
         $options = [
             'namePlaceholder' => $this->getPlaceholderForName(),
-            'deleteAlert' => Yii::t('vendor/voskobovich/yii2-tree-manager/widgets/nestable',
+            'deleteAlert' => Yii::t('vendor/musgravehill/yii2-tree-manager/widgets/nestable',
                 'The nobe will be removed together with the children. Are you sure?'),
-            'newNodeTitle' => Yii::t('vendor/voskobovich/yii2-tree-manager/widgets/nestable',
+            'newNodeTitle' => Yii::t('vendor/musgravehill/yii2-tree-manager/widgets/nestable',
                 'Enter the new node name'),
         ];
 
@@ -299,7 +299,7 @@ class Nestable extends Widget
      */
     public function getPlaceholderForName()
     {
-        return Yii::t('vendor/voskobovich/yii2-tree-manager/widgets/nestable', 'Node name');
+        return Yii::t('vendor/musgravehill/yii2-tree-manager/widgets/nestable', 'Node name');
     }
 
     /**
@@ -310,16 +310,16 @@ class Nestable extends Widget
         echo Html::beginTag('div', ['class' => "{$this->id}-nestable-menu"]);
 
         echo Html::beginTag('div', ['class' => 'btn-group']);
-        echo Html::button(Yii::t('vendor/voskobovich/yii2-tree-manager/widgets/nestable', 'Add node'), [
+        echo Html::button(Yii::t('vendor/musgravehill/yii2-tree-manager/widgets/nestable', 'Add node'), [
             'data-toggle' => 'modal',
             'data-target' => "#{$this->id}-new-node-modal",
             'class' => 'btn btn-success'
         ]);
-        echo Html::button(Yii::t('vendor/voskobovich/yii2-tree-manager/widgets/nestable', 'Collapse all'), [
+        echo Html::button(Yii::t('vendor/musgravehill/yii2-tree-manager/widgets/nestable', 'Collapse all'), [
             'data-action' => 'collapse-all',
             'class' => 'btn btn-default'
         ]);
-        echo Html::button(Yii::t('vendor/voskobovich/yii2-tree-manager/widgets/nestable', 'Expand all'), [
+        echo Html::button(Yii::t('vendor/musgravehill/yii2-tree-manager/widgets/nestable', 'Expand all'), [
             'data-action' => 'expand-all',
             'class' => 'btn btn-default',
             'style' => 'display: none'
@@ -348,9 +348,9 @@ class Nestable extends Widget
     {
         /** @var ActiveRecord $model */
         $model = new $this->modelClass;
-        $labelNewNode = Yii::t('vendor/voskobovich/yii2-tree-manager/widgets/nestable','New node');
-        $labelCloseButton = Yii::t('vendor/voskobovich/yii2-tree-manager/widgets/nestable','Close');
-        $labelCreateNode = Yii::t('vendor/voskobovich/yii2-tree-manager/widgets/nestable','Create node');
+        $labelNewNode = Yii::t('vendor/musgravehill/yii2-tree-manager/widgets/nestable','New node');
+        $labelCloseButton = Yii::t('vendor/musgravehill/yii2-tree-manager/widgets/nestable','Close');
+        $labelCreateNode = Yii::t('vendor/musgravehill/yii2-tree-manager/widgets/nestable','Create node');
 
         echo <<<HTML
 <div class="modal" id="{$this->id}-new-node-modal" tabindex="-1" role="dialog" aria-labelledby="newNodeModalLabel">
@@ -421,17 +421,17 @@ HTML;
             ['class' => 'dd-input-name', 'placeholder' => $this->getPlaceholderForName()]);
 
         echo Html::beginTag('div', ['class' => 'btn-group']);
-        echo Html::button(Yii::t('vendor/voskobovich/yii2-tree-manager/widgets/nestable', 'Save'), [
+        echo Html::button(Yii::t('vendor/musgravehill/yii2-tree-manager/widgets/nestable', 'Save'), [
             'data-action' => 'save',
             'class' => 'btn btn-success btn-sm',
         ]);
-        echo Html::a(Yii::t('vendor/voskobovich/yii2-tree-manager/widgets/nestable', 'Advanced editing'),
+        echo Html::a(Yii::t('vendor/musgravehill/yii2-tree-manager/widgets/nestable', 'Advanced editing'),
             $item['update-url'], [
                 'data-action' => 'advanced-editing',
                 'class' => 'btn btn-default btn-sm',
                 'target' => '_blank'
             ]);
-        echo Html::button(Yii::t('vendor/voskobovich/yii2-tree-manager/widgets/nestable', 'Delete'), [
+        echo Html::button(Yii::t('vendor/musgravehill/yii2-tree-manager/widgets/nestable', 'Delete'), [
             'data-action' => 'delete',
             'class' => 'btn btn-danger btn-sm'
         ]);

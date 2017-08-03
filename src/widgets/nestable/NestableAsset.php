@@ -1,19 +1,19 @@
 <?php
 
-namespace voskobovich\tree\manager\widgets\nestable;
+namespace musgravehill\tree\manager\widgets\nestable;
 
 use yii\web\AssetBundle;
 
 /**
  * Class NestableAsset
- * @package voskobovich\tree\manager\widgets
+ * @package musgravehill\tree\manager\widgets
  */
 class NestableAsset extends AssetBundle
 {
     /**
      * @var string
      */
-    public $sourcePath = '@vendor/voskobovich/yii2-tree-manager/src/widgets/nestable/assets';
+    public $sourcePath = '@vendor/musgravehill/yii2-tree-manager/src/widgets/nestable/assets';
 
     /**
      * @var array

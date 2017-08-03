@@ -1,13 +1,13 @@
 <?php
 
-namespace voskobovich\tree\manager\interfaces;
+namespace musgravehill\tree\manager\interfaces;
 
 use yii\db\ActiveQuery;
 
 
 /**
  * Interface TreeQueryInterface
- * @package voskobovich\tree\manager\interfaces
+ * @package musgravehill\tree\manager\interfaces
  */
 interface TreeQueryInterface
 {

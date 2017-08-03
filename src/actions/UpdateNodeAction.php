@@ -1,8 +1,8 @@
 <?php
 
-namespace voskobovich\tree\manager\actions;
+namespace musgravehill\tree\manager\actions;
 
-use voskobovich\tree\manager\interfaces\TreeInterface;
+use musgravehill\tree\manager\interfaces\TreeInterface;
 use Yii;
 use yii\base\Exception;
 use yii\base\InvalidConfigException;
@@ -10,7 +10,7 @@ use yii\db\ActiveRecord;
 
 /**
  * Class UpdateNodeAction
- * @package voskobovich\tree\manager\actions
+ * @package musgravehill\tree\manager\actions
  */
 class UpdateNodeAction extends BaseAction
 {

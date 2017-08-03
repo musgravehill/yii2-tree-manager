@@ -1,8 +1,8 @@
 <?php
 
-namespace voskobovich\tree\manager\actions;
+namespace musgravehill\tree\manager\actions;
 
-use voskobovich\tree\manager\interfaces\TreeInterface;
+use musgravehill\tree\manager\interfaces\TreeInterface;
 use Yii;
 use yii\base\Action;
 use yii\base\InvalidConfigException;
@@ -11,7 +11,7 @@ use yii\web\NotFoundHttpException;
 
 /**
  * Class BaseAction
- * @package voskobovich\tree\manager\actions
+ * @package musgravehill\tree\manager\actions
  */
 abstract class BaseAction extends Action
 {
