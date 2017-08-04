@@ -403,17 +403,11 @@ HTML;
         echo Html::beginTag('div', ['class' => 'dd-edit-panel']);
         echo Html::input('text', null, $item['name'], ['class' => 'dd-input-name', 'placeholder' => $this->getPlaceholderForName()]);
 
-        //echo Html::beginTag('div', ['class' => 'btn-group']);
+        echo Html::beginTag('div', ['class' => 'btn-group']);
         echo Html::button(Yii::t('vendor/musgravehill/yii2-tree-manager/widgets/nestable', 'Save'), [
             'data-action' => 'save',
             'class' => 'btn btn-success btn-sm',
         ]);
-
-        echo Html::input('text', null, '', ['create-child-name' => '', 'parent-id' => $item['id'], 'class' => 'dd-input-create-child', 'placeholder' => 'create child']);
-        echo Html::button('create child', [
-            'create-child-submit' => '', 'parent-id' => $item['id'],
-            'class' => 'btn btn-primary btn-sm'
-        ]); 
         /*
           echo Html::a(Yii::t('vendor/musgravehill/yii2-tree-manager/widgets/nestable', 'Update'),
           $item['update-url'], [
@@ -423,9 +417,16 @@ HTML;
           ]); */
         echo Html::button(Yii::t('vendor/musgravehill/yii2-tree-manager/widgets/nestable', 'Delete'), [
             'data-action' => 'delete',
-            'class' => 'btn btn-danger btn-sm pull-right'
+            'class' => 'btn btn-danger btn-sm',
+            'style'=>'margin-left: 30px;',
         ]);
-        //echo Html::endTag('div');
+        echo Html::endTag('div');
+
+        echo Html::input('text', null, '', ['create-child-name' => '', 'parent-id' => $item['id'], 'class' => 'dd-input-create-child', 'placeholder' => 'create child']);
+        echo Html::button('create child', [
+            'create-child-submit' => '', 'parent-id' => $item['id'],
+            'class' => 'btn btn-primary btn-sm'
+        ]);
 
         echo Html::endTag('div');
 
