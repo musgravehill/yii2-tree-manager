@@ -301,15 +301,15 @@ class Nestable extends Widget {
         echo Html::button(Yii::t('vendor/musgravehill/yii2-tree-manager/widgets/nestable', 'Add node to root'), [
             'data-toggle' => 'modal',
             'data-target' => "#{$this->id}-new-node-modal",
-            'class' => 'btn btn-success'
+            'class' => 'btn btn-info btn-xs'
         ]);
         echo Html::button(Yii::t('vendor/musgravehill/yii2-tree-manager/widgets/nestable', 'Collapse all'), [
             'data-action' => 'collapse-all',
-            'class' => 'btn btn-default'
+            'class' => 'btn btn-default btn-xs'
         ]);
         echo Html::button(Yii::t('vendor/musgravehill/yii2-tree-manager/widgets/nestable', 'Expand all'), [
             'data-action' => 'expand-all',
-            'class' => 'btn btn-default',
+            'class' => 'btn btn-default btn-xs',
             'style' => 'display: none'
         ]);
         echo Html::endTag('div');
@@ -404,9 +404,9 @@ HTML;
         echo Html::input('text', null, $item['name'], ['class' => 'dd-input-name', 'placeholder' => $this->getPlaceholderForName()]);
 
         echo Html::beginTag('div', ['class' => 'btn-group']);
-        echo Html::button(Yii::t('vendor/musgravehill/yii2-tree-manager/widgets/nestable', 'Save'), [
+        echo Html::button(Yii::t('vendor/musgravehill/yii2-tree-manager/widgets/nestable', 'save'), [
             'data-action' => 'save',
-            'class' => 'btn btn-success btn-sm',
+            'class' => 'btn btn-success btn-xs',
         ]);
         /*
           echo Html::a(Yii::t('vendor/musgravehill/yii2-tree-manager/widgets/nestable', 'Update'),
@@ -415,17 +415,16 @@ HTML;
           'class' => 'btn btn-default btn-sm',
           'target' => '_blank'
           ]); */
-        echo Html::button(Yii::t('vendor/musgravehill/yii2-tree-manager/widgets/nestable', 'Delete'), [
+        echo Html::button(Yii::t('vendor/musgravehill/yii2-tree-manager/widgets/nestable', 'delete node'), [
             'data-action' => 'delete',
-            'class' => 'btn btn-danger btn-sm',
-            'style'=>'margin-left: 30px;',
+            'class' => 'btn btn-danger btn-xs',
         ]);
         echo Html::endTag('div');
 
         echo Html::input('text', null, '', ['create-child-name' => '', 'parent-id' => $item['id'], 'class' => 'dd-input-create-child', 'placeholder' => 'create child']);
         echo Html::button('create child', [
             'create-child-submit' => '', 'parent-id' => $item['id'],
-            'class' => 'btn btn-primary btn-sm'
+            'class' => 'btn btn-primary btn-xs'
         ]);
 
         echo Html::endTag('div');

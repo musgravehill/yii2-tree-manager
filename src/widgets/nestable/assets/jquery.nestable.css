@@ -3,9 +3,10 @@
     font-size: 12px;
     list-style: none;
     margin: 10px 0;
-    max-width: 924px;
+    /* max-width: 924px; */
     padding: 0;
     position: relative;
+    width: 100%;
 }
 
 .dd-list {
@@ -129,7 +130,7 @@
     line-height: 14px;
     width: 14px;
     height: 14px;
-    background-color: #006dcc;
+    background-color: #cccccc;
 }
 
 .dd-handle:before {
@@ -149,23 +150,29 @@
 
 .dd-edit-panel {
     display: none;
-    height: 42px;
+    height: 37px;
     background-color: #cccccc;
     padding: 6px;
+    margin: 0 0 14px 0;
 }
 
-.dd-input-name,
-.dd-input-url,
-.dd-input-bizrule {
+.dd-edit-panel input.dd-input-name,
+.dd-edit-panel input.dd-input-create-child {
     display: inline-block;
     width: 200px;
+    padding: 0px 4px;
+    margin: 0px 3px 0px 0;
+    height: 24px;
+    border-radius: 3px;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+}
+.dd-edit-panel button{
+    margin-top: -1px;
 }
 
-.dd-input-name,
-.dd-input-url {
-    margin-bottom: 3px !important;
-}
-.dd-input-create-child{
-    width: 200px;
+.dd-edit-panel input.dd-input-create-child {
     margin-left: 30px;
 }
