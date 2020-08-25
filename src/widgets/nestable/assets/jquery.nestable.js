@@ -355,7 +355,7 @@
                     prev_id: (prev.length ? prev.data('id') : 0),
                     next_id: (next.length ? next.data('id') : 0)
                 }
-            }).success(function () {
+            }).done(function () {
                 $.pjax.reload({container: '#' + tree.el.attr('id') + '-pjax'});
             }).fail(function (jqXHR) {
                 alert(jqXHR.responseText);
@@ -373,7 +373,7 @@
                 url: this.options.deleteUrl + '?id=' + id,
                 method: 'POST',
                 context: document.body
-            }).success(function (data, textStatus, jqXHR) {
+            }).done(function (data, textStatus, jqXHR) {
                 $.pjax.reload({container: '#' + tree.el.attr('id') + '-pjax'});
             }).fail(function (jqXHR) {
                 alert(jqXHR.responseText);
@@ -397,7 +397,7 @@
                 data: {
                     name: name.val()
                 }
-            }).success(function (data, textStatus, jqXHR) {
+            }).done(function (data, textStatus, jqXHR) {
                 var editPanel = el.children('.' + tree.options.editPanelClass);
                 editPanel.removeClass(tree.options.inputOpenClass);
                 editPanel.slideUp(100);
