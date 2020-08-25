@@ -76,3 +76,19 @@ use \musgravehill\tree\manager\widgets\nestable\Nestable;
     'modelClass' => 'models\ModelName',
 ]) ?>
 ```
+
+  app \translates\ru-RU\vendor\musgravehill\yii2-tree-manager\widgets\nestable.php
+return [
+    'The nobe will be removed together with the children. Are you sure?' => 'Удалить item вместе с наследниками?',
+    'Enter the new node name' => 'Название',
+    'Node name' => 'Название',
+    'Add node to root' => 'Добавить item',
+    'Collapse all' => 'Скрыть все',
+    'Expand all' => 'Раскрыть все',
+    'New node' => 'Создать item',
+    'Close' => 'Закрыть',
+    'Create node' => 'Создать item',
+    'save' => 'Сохранить',
+    'delete node' => 'Удалить',
+    'create child' => 'Добавить наследника',
+];
