@@ -206,7 +206,7 @@ class Nestable extends Widget {
                     url: '{$this->getPluginOptions('createUrl')}',
                     method: 'POST',
                     data: $(this).serialize()
-                }).success(function (data, textStatus, jqXHR) {
+                }).done(function (data, textStatus, jqXHR) {
                     $('#{$this->id}-new-node-modal').modal('hide')
                     $.pjax.reload({container: '#{$this->id}-pjax'});
                     window.scrollTo(0, document.body.scrollHeight);
