@@ -356,7 +356,8 @@
                     next_id: (next.length ? next.data('id') : 0)
                 }
             }).done(function () {
-                $.pjax.reload({container: '#' + tree.el.attr('id') + '-pjax'});
+               // $.pjax.reload({container: '#' + tree.el.attr('id') + '-pjax'});
+                location.reload();
             }).fail(function (jqXHR) {
                 alert(jqXHR.responseText);
             });
@@ -374,7 +375,8 @@
                 method: 'POST',
                 context: document.body
             }).done(function (data, textStatus, jqXHR) {
-                $.pjax.reload({container: '#' + tree.el.attr('id') + '-pjax'});
+                //$.pjax.reload({container: '#' + tree.el.attr('id') + '-pjax'});
+                location.reload();
             }).fail(function (jqXHR) {
                 alert(jqXHR.responseText);
             });
@@ -401,6 +403,7 @@
                 var editPanel = el.children('.' + tree.options.editPanelClass);
                 editPanel.removeClass(tree.options.inputOpenClass);
                 editPanel.slideUp(100);
+                location.reload();
             }).fail(function (jqXHR) {
                 alert(jqXHR.responseText);
             });
