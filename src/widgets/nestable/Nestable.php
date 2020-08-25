@@ -297,7 +297,7 @@ class Nestable extends Widget {
     public function actionButtons() {
         echo Html::beginTag('div', ['class' => "{$this->id}-nestable-menu"]);
 
-        
+
         echo Html::button(Yii::t('vendor/musgravehill/yii2-tree-manager/widgets/nestable', 'Add node to root'), [
             'data-toggle' => 'modal',
             'data-target' => "#{$this->id}-new-node-modal",
@@ -306,13 +306,13 @@ class Nestable extends Widget {
         echo Html::button(Yii::t('vendor/musgravehill/yii2-tree-manager/widgets/nestable', 'Collapse all'), [
             'data-action' => 'collapse-all',
             'class' => 'btn btn-outline-secondary btn-sm ml-3'
-        ]); 
+        ]);
         echo Html::button(Yii::t('vendor/musgravehill/yii2-tree-manager/widgets/nestable', 'Expand all'), [
             'data-action' => 'expand-all',
             'class' => 'btn btn-outline-secondary btn-sm ml-3',
             'style' => 'display: none'
         ]);
-        
+
 
         echo Html::endTag('div');
     }
@@ -333,9 +333,8 @@ class Nestable extends Widget {
      */
     private function renderForm() {
         /** @var ActiveRecord $model */
-        $model = new $this->modelClass;
-        $labelNewNode = Yii::t('vendor/musgravehill/yii2-tree-manager/widgets/nestable', 'New node');
-        $labelCloseButton = Yii::t('vendor/musgravehill/yii2-tree-manager/widgets/nestable', 'Close');
+        $model = new $this->modelClass;      
+        
         $labelCreateNode = Yii::t('vendor/musgravehill/yii2-tree-manager/widgets/nestable', 'Create node');
 
         echo <<<HTML
@@ -347,22 +346,18 @@ class Nestable extends Widget {
                     <span aria-hidden="true">&times;</span>
                 </button>
 HTML;
+
         /** @var ActiveForm $form */
         $form = ActiveForm::begin([
                     'id' => $this->id . '-new-node-form'
-        ]);
-
+        ]);  
         echo call_user_func($this->formFieldsCallable, $form, $model);
-
         echo <<<HTML
-            </div>
-            <div class="modal-footer">
-                  <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">$labelCloseButton</button>
-                <button type="submit" class="btn btn-success">$labelCreateNode</button>
-            </div>
+                <button type="submit" class="btn btn-success">$labelCreateNode</button>            
 HTML;
         $form->end();
         echo <<<HTML
+            </div>
         </div>
     </div>
 </div>
@@ -417,7 +412,7 @@ HTML;
         ]);
         echo Html::endTag('div');
 
-        echo Html::input('text', null, '', ['create-child-name' => '', 'parent-id' => $item['id'], 'class' => 'dd-input-create-child', 'placeholder' => Yii::t('vendor/musgravehill/yii2-tree-manager/widgets/nestable', 'Node name'), ]);
+        echo Html::input('text', null, '', ['create-child-name' => '', 'parent-id' => $item['id'], 'class' => 'dd-input-create-child', 'placeholder' => Yii::t('vendor/musgravehill/yii2-tree-manager/widgets/nestable', 'Node name'),]);
         echo Html::button(Yii::t('vendor/musgravehill/yii2-tree-manager/widgets/nestable', 'create child'), [
             'create-child-submit' => '', 'parent-id' => $item['id'],
             'class' => 'btn btn-primary btn-sm'
