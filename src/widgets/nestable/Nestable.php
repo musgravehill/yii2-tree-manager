@@ -421,8 +421,8 @@ HTML;
         ]);
         echo Html::endTag('div');
 
-        echo Html::input('text', null, '', ['create-child-name' => '', 'parent-id' => $item['id'], 'class' => 'dd-input-create-child', 'placeholder' => 'create child']);
-        echo Html::button('create child', [
+        echo Html::input('text', null, '', ['create-child-name' => '', 'parent-id' => $item['id'], 'class' => 'dd-input-create-child', 'placeholder' => Yii::t('vendor/musgravehill/yii2-tree-manager/widgets/nestable', 'create child'), ]);
+        echo Html::button(Yii::t('vendor/musgravehill/yii2-tree-manager/widgets/nestable', 'create child'), [
             'create-child-submit' => '', 'parent-id' => $item['id'],
             'class' => 'btn btn-primary btn-xs'
         ]);
