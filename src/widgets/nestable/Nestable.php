@@ -207,9 +207,10 @@ class Nestable extends Widget {
                     method: 'POST',
                     data: $(this).serialize()
                 }).done(function (data, textStatus, jqXHR) {
-                    $('#{$this->id}-new-node-modal').modal('hide')
-                    $.pjax.reload({container: '#{$this->id}-pjax'});
-                    window.scrollTo(0, document.body.scrollHeight);
+                    //$('#{$this->id}-new-node-modal').modal('hide')
+                    //$.pjax.reload({container: '#{$this->id}-pjax'});
+                    //window.scrollTo(0, document.body.scrollHeight);
+		    location.reload();
                 }).fail(function (jqXHR) {
                     alert(jqXHR.responseText);
                 });
